@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <title>DLogger</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- SIDE BAR -->
+        <aside class="flex sidebar sticky">
+
+            <h1 class="heading-1 dlogger mb-bg">DLogger</h1>
+            <div class="nav_main">
+                <h2 class="heading-2 faded mb-sm">Main</h2>
+                <nav>
+                    <ul>
+                        <li><a class="paragraph-bold mb-md btn btn-link" href="#"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li><a class="paragraph-bold mb-md btn btn-link active" href="#"><i
+                                    class="fas fa-sticky-note"></i> Work Order Log</a></li>
+                        <li><a class="paragraph-bold mb-md btn btn-link" href="#"><i class="fas fa-pen-square"></i>
+                                Delta Log</a></li>
+                        <li><a class="paragraph-bold mb-md btn btn-link" href="#"><i class="fas fa-file-import"></i>
+                                Auto Dispatch</a></li>
+                        <h2 class="heading-2 faded mb-md">Links</h2>
+                        <li><a class="paragraph-bold mb-sm btn btn-link" target="_blank"
+                                href="https://www.google.com/"><i class="fab fa-google"></i> Google</a></li>
+                        <li><a class="paragraph-bold mb-sm btn btn-link" target="_blank"
+                                href="https://www.dell.com/support/home/en-us"><i class="fas fa-laptop-code"></i> Dell
+                                Website</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </aside>
+        <!-- SIDE BAR END-->
+
+        <!-- MAIN -->
+        <main class="main flex">
+            <a class="hamburger-menu">
+                <span class="hamburger-menu--1"></span>
+                <span class="hamburger-menu--2"></span>
+                <span class="hamburger-menu--3"></span>
+            </a>
+            <p class="paragraph">Main Log > <span class="paragraph faded-light">Work Order</span></p>
+            <div class="main-header flex-row-left">
+                <div class="main_logger-title">
+                    <h2 class="heading-2 mb-md text-space">Logger <span class="mx-sm"><i
+                                class="fas fa-clipboard-list"></i></span></i></h2>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="main_header-search paragraph">
+                    <div class="search-result">
+                        <p>Cru to fru</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <button id="complete_log" class="btn btn-generate btn-orange paragraph-bold">Complete Log</button>
+                </div>
+                <div class="form-group flex mx-1">
+                    <button id="public_log" class="btn btn-generate btn-green paragraph-bold">Public Log</button>
+                </div>
+                <div class="form-group flex">
+                    <button id="reset" class="btn btn-generate btn-red paragraph-bold">Reset Log</button>
+                </div>
+            </section>
+
+            <form autocomplete="off" class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph faded-light">First Name</label>
+                    <input id="firstname" type="text" class="form-control paragraph form_item">
+                </div>
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">Last Name</label>
+                    <input id="lastname" type="text" class="form-control paragraph form_item">
+                </div>
+            </form>
+
+
+            <form autocomplete="off" class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph faded-light">Phone Number</label>
+                    <input id="phone_number" type="text" class="form-control paragraph form_item">
+                </div>
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">Alt Phone Number</label>
+                    <input id="alt_phone_number" type="text" class="form-control paragraph form_item">
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex input-dark-color">
+                    <label class="paragraph faded-light">Service Tag / Express Code</label>
+                    <input id="serviceExpress" type="text" class="form-control paragraph form_item">
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">PPID:POS(Monitor, Battery, Charger, Docking Station</label>
+                    <textarea id="ppid" type="text" class="form-textarea paragraph-bold form_item"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex textarea-mix">
+                    <label class="paragraph-bold faded">Customer's Issue</label>
+                    <textarea id="customer_issue" type="text"
+                        class="form-textarea form-textarea-faded paragraph form_item"
+                        placeholder="e.g.The computer does not boot into window 10"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">Probing</label>
+                    <textarea id="probing" type="text" class="form-textarea paragraph-bold form_item" placeholder="1. Is there any external damage to the device?
+2. When and how did the damage occur?
+3. Where was the system at the time of the incident?"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex input-dark-color">
+                    <label class="paragraph faded-light">Troubleshooting</label>
+                    <textarea id="troubleshooting" type="text" class="form-textarea paragraph-bold form_item"
+                        placeholder="Paste your log from Digital Resolution / Guided Resolution"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">Resolution (Part Replacement + NBD/POS/RTD)</label>
+                    <textarea id="resolution" placeholder="e.g.Motherboard + NBD" type="text"
+                        class="form-textarea paragraph-bold form_item"></textarea>
+                </div>
+            </form>
+
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex textarea-mix">
+                    <label class="paragraph-bold faded">Oracle SLN ID</label>
+                    <textarea id="oracle" type="text"
+                        class="form-textarea form-textarea-faded paragraph form_item"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">Email Address</label>
+                    <textarea id="email_address" placeholder="e.g.john_smit@gmail.com" type="text"
+                        class="form-textarea paragraph-bold form_item"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex input-dark-color">
+                    <label class="paragraph faded-light">Physical Address</label>
+                    <textarea id="physical_address" type="text"
+                        class="form-textarea paragraph-bold form_item"></textarea>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex">
+                    <label class="paragraph faded-light">ACP (Alternate Contact Person)</label>
+                    <textarea id="acp" type="text" class="form-textarea paragraph-bold form_item"></textarea>
+                </div>
+            </form>
+
+
+            <!-- !-- STAMPS -->
+
+            <div class="flex-row">
+                <h2 class="heading-2 mb-md text-space">STAMPS <span class="mx-sm"><i
+                            class="fas fa-stamp"></i></span></i></h2>
+            </div>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">BTTR (Best Time To Reach)</label>
+                    <input id="bttr" type="text" class="form-control paragraph form_item">
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">Timezone</label>
+                    <select name="timezone" id="timezone" class="select form_item">
+                        <option value="N/A" selected>N/A</option>
+                        <option value="central">Central Standard</option>
+                        <option value="mountain">Mountain Standard</option>
+                        <option value="pacific">Pacific Standard</option>
+                        <option value="eastern">Eastern Standard</option>
+                        <option value="alaska">Alaska Standard</option>
+                        <option value="hawaii">Hawaii-Aleutian Standard</option>
+                        <option value="newfoundland">Canada-Newfoundland Standard</option>
+                        <option value="atlantic">Canada-Atlantic Standard</option>
+                    </select>
+                </div>
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">HDD Data Loss</label>
+                    <select name="" id="hdd_data_loss" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+            </form>
+
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">TARP (Told About Return Policy)</label>
+                    <select name="" id="tarp" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">VDI</label>
+                    <select name="" id="vdi" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </form>
+
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">CIDAR Expectations</label>
+                    <select name="" id="cidar" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">SMS offered</label>
+                    <select name="" id="sms_offered" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </form>
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">FRU to CRU Disclaimer</label>
+                    <select name="" id="fru_to_cru" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">CRU TO FRU Disclaimer</label>
+                    <select name="" id="cru_to_fru" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </form>
+
+
+            <form class="form-wrapper flex-row">
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">Test Email?</label>
+                    <select name="" id="test_email" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group flex mx-1">
+                    <label class="paragraph">1 AD Per Year</label>
+                    <select name="" id="one_ad_per_year" class="select form_item">
+                        <option selected value="N/A">N/A</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <textarea id="blank_text_area"></textarea>
+            </form>
+
+
+        </main>
+        <!-- MAIN END -->
+
+        <!-- RIGHT SIDE -->
+        <section class="right_side flex sticky">
+            <h2 class="heading-2">Under Construction</h2>
+            <!-- <h2 class="heading-2">Coming Soon</h2>
+             <h2 class="heading-2">Search Function is still not working</h2>
+             <h2 class="heading-2">NBD/POS/RTD Modal to be Added..</h2> -->
+        </section>
+        <!-- RIGHT SIDE END -->
+
+    </div>
+
+
+    <!-- Context Menu -->
+
+    <div class="context_menu">
+        <div class="context_menu-item menu_complete">
+            <i class="fa fa-copy"></i> <span>Complete Log</span>
+        </div>
+
+        <div class="context_menu-item menu_public">
+            <i class="fa fa-clone"></i> <span>Public Log</span>
+        </div>
+
+        <hr>
+
+    
+          <div class="context_menu-item menu_copy">
+            <i class="fa fa-clone"></i> <span>Copy</span>
+          </div>
+          <div class="context_menu-item menu_cut">
+            <i class="fa fa-cut"></i> <span>Cut</span>
+          </div>
+          <div class="context_menu-item menu_paste">
+            <i class="fa fa-paste"></i> <span>Paste</span>
+          </div>
+
+        <hr>
+        <div class="context_menu-item menu_reset">
+            <i class="fa fa-times"></i> <span>Reset Log</span>
+        </div>
+    </div>
+
+    <!-- Context Menu End -->
+
+
+
+    <script src="js/db.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
